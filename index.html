@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creche Escola Santa Beatriz — Berçário ao 5º ano | Pechincha, Rio de Janeiro</title>
+<meta name="description" content="Creche Escola Santa Beatriz, na Pechincha (RJ). Berçário a partir de 4 meses até o 5º ano do Fundamental I. Projeto bilíngue, robótica, nutricionista e psicóloga. Aberto de 06:45 às 19:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="fotos/logo.png">
+<style>
+/* ============================================================
+   CRECHE ESCOLA SANTA BEATRIZ — folha de estilo única
+   Paleta da marca: azul (institucional), vermelho e amarelo.
+   ============================================================ */
+:root{
+  --azul:#12518F;
+  --azul-esc:#0B3A69;
+  --azul-claro:#BBDBF2;
+  --azul-nevoa:#EFF6FC;
+  --vermelho:#D6382F;
+  --vermelho-esc:#B32A22;
+  --amarelo:#F6B723;
+  --amarelo-suave:#FDF1D3;
+  --tinta:#17232E;
+  --tinta-suave:#4E5F6D;
+  --branco:#fff;
+  --borda:#DAE7F3;
+  --sombra:0 18px 40px -24px rgba(11,58,105,.45);
+  --sombra-alta:0 26px 60px -28px rgba(11,58,105,.55);
+  --raio:20px;
+  --larg:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{
+  margin:0;
+  background:var(--branco);
+  color:var(--tinta);
+  font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:17px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.display{font-family:'Baloo 2','Figtree',cursive;line-height:1.15;margin:0;font-weight:700;letter-spacing:-.01em}
+p{margin:0 0 1em}
+a{color:var(--azul);text-decoration:none}
+img{max-width:100%;display:block}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px;border-radius:6px}
+
+.env{width:min(100% - 40px,var(--larg));margin-inline:auto}
+.secao{padding:clamp(60px,7.5vw,104px) 0}
+.secao--nevoa{background:var(--azul-nevoa)}
+.secao--sol{background:linear-gradient(180deg,#FEF9EA,#FCEFCF)}
+.pular{position:absolute;left:-9999px;top:0;background:var(--azul);color:#fff;padding:12px 18px;z-index:200;border-radius:0 0 10px 0}
+.pular:focus{left:0}
+
+/* ---------- Eyebrow / títulos ---------- */
+.olho{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--vermelho);margin-bottom:14px;
+}
+.olho::before{content:"";width:22px;height:3px;border-radius:3px;background:var(--amarelo)}
+.olho--claro{color:var(--amarelo)}
+.titulo{font-size:clamp(1.85rem,4vw,2.9rem)}
+.subtitulo{color:var(--tinta-suave);max-width:64ch;font-size:1.06rem}
+.cabecalho-secao{max-width:760px;margin-bottom:clamp(34px,4vw,54px)}
+
+/* ---------- Botões ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:'Baloo 2',cursive;font-weight:700;font-size:1.02rem;
+  padding:14px 26px;border-radius:999px;border:2px solid transparent;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,color .18s ease;
+  cursor:pointer;white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn--zap{background:var(--vermelho);color:#fff;box-shadow:0 12px 24px -12px rgba(214,56,47,.85)}
+.btn--zap:hover{background:var(--vermelho-esc)}
+.btn--linha{border-color:var(--azul);color:var(--azul);background:transparent}
+.btn--linha:hover{background:var(--azul);color:#fff}
+.btn--amarelo{background:var(--amarelo);color:var(--azul-esc)}
+.btn--amarelo:hover{background:#ffc846}
+.btn--claro{background:#fff;color:var(--azul);}
+.btn--fantasma{border-color:rgba(255,255,255,.55);color:#fff}
+.btn--fantasma:hover{background:#fff;color:var(--azul)}
+
+/* ---------- Barra superior ---------- */
+.barra-topo{background:var(--azul-esc);color:#dcecf9;font-size:.86rem}
+.barra-topo .env{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:center;justify-content:space-between;padding:9px 0}
+.barra-topo a{color:#dcecf9;display:inline-flex;align-items:center;gap:7px}
+.barra-topo a:hover{color:var(--amarelo)}
+.barra-topo ul{display:flex;flex-wrap:wrap;gap:8px 22px}
+.tri{height:4px;display:flex}
+.tri span{flex:1}
+.tri span:nth-child(1){background:var(--azul)}
+.tri span:nth-child(2){background:var(--amarelo)}
+.tri span:nth-child(3){background:var(--vermelho)}
+
+/* ---------- Cabeçalho ---------- */
+.topo{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:box-shadow .2s ease,border-color .2s ease}
+.topo.rolou{box-shadow:0 10px 30px -22px rgba(11,58,105,.6);border-color:var(--borda)}
+.topo .env{display:flex;align-items:center;gap:20px;justify-content:space-between;padding:12px 0}
+.marca{display:flex;align-items:center;gap:12px}
+.marca img{width:64px;height:auto}
+.marca b{font-family:'Baloo 2',cursive;font-size:1.02rem;color:var(--azul-esc);display:block;line-height:1.15}
+.marca small{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-suave);font-weight:600}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a{
+  padding:9px 13px;border-radius:999px;font-weight:600;font-size:.95rem;color:var(--tinta);white-space:nowrap;
+  transition:background .18s ease,color .18s ease;
+}
+.nav a:hover{background:var(--azul-nevoa);color:var(--azul)}
+.topo .btn{padding:11px 20px;font-size:.95rem}
+.menu-btn{display:none;background:var(--azul-nevoa);border:1px solid var(--borda);border-radius:12px;width:46px;height:46px;align-items:center;justify-content:center;cursor:pointer}
+.menu-btn span{display:block;width:20px;height:2px;background:var(--azul-esc);position:relative}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--azul-esc)}
+.menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(170deg,#F4F9FE 0%,#fff 62%)}
+.hero::after{
+  content:"";position:absolute;right:-140px;top:-160px;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,rgba(187,219,242,.75),rgba(187,219,242,0) 68%);
+}
+.hero .env{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,60px);align-items:center;padding:clamp(48px,6vw,84px) 0 clamp(56px,7vw,92px)}
+.hero h1{font-size:clamp(2.2rem,5.1vw,3.75rem);color:var(--azul-esc);margin-bottom:18px}
+.hero h1 em{
+  font-style:normal;color:var(--vermelho);white-space:nowrap;
+  background:linear-gradient(transparent 66%,rgba(246,183,35,.45) 66%,rgba(246,183,35,.45) 94%,transparent 94%);
+}
+.hero p.lead{font-size:1.13rem;color:var(--tinta-suave);max-width:52ch}
+.hero-acoes{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 28px}
+.selos{display:flex;flex-wrap:wrap;gap:10px}
+.selo{
+  display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--borda);
+  padding:9px 15px;border-radius:999px;font-size:.87rem;font-weight:600;color:var(--azul-esc);box-shadow:0 6px 14px -12px rgba(11,58,105,.7)
+}
+.selo i{width:9px;height:9px;border-radius:50%;background:var(--amarelo);flex:none}
+.selo:nth-child(2) i{background:var(--vermelho)}
+.selo:nth-child(3) i{background:var(--azul)}
+
+.cartao-marca{
+  background:#fff;border-radius:30px;padding:clamp(26px,3.4vw,42px);text-align:center;
+  box-shadow:var(--sombra-alta);border:1px solid var(--borda);position:relative
+}
+.cartao-marca::before{
+  content:"";position:absolute;inset:-1px;border-radius:30px;padding:5px;
+  background:linear-gradient(135deg,var(--azul),var(--amarelo) 55%,var(--vermelho));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
+}
+.cartao-marca img{width:min(260px,72%);margin:0 auto 18px}
+.fita{
+  display:inline-block;background:var(--azul-esc);color:#fff;font-family:'Baloo 2',cursive;font-weight:700;
+  padding:7px 20px;border-radius:999px;font-size:.9rem;letter-spacing:.04em
+}
+.cartao-marca p{margin:16px 0 0;font-size:.96rem;color:var(--tinta-suave)}
+
+/* ---------- Tour em vídeo (no topo) ---------- */
+.tour{display:flex;flex-direction:column;align-items:center;gap:18px;align-self:start}
+.tour-moldura{position:relative;width:min(100%,300px);width:min(100%,clamp(230px,calc((100vh - 280px) * .5625),300px));width:min(100%,clamp(230px,calc((100svh - 280px) * .5625),300px));aspect-ratio:9/16;border-radius:30px;overflow:hidden;background:var(--azul-esc);box-shadow:var(--sombra-alta)}
+.tour-moldura::before{
+  content:"";position:absolute;inset:0;border-radius:30px;padding:5px;z-index:4;pointer-events:none;
+  background:linear-gradient(135deg,var(--azul),var(--amarelo) 55%,var(--vermelho));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+}
+.tour-video{width:100%;height:100%;object-fit:cover;display:block}
+.tour-selo{
+  position:absolute;top:16px;left:16px;z-index:2;display:inline-flex;align-items:center;gap:8px;
+  background:rgba(11,58,105,.8);color:#fff;font-weight:700;font-size:.8rem;letter-spacing:.02em;
+  padding:7px 13px;border-radius:999px;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)
+}
+.tour-selo i{width:8px;height:8px;border-radius:50%;background:var(--vermelho);box-shadow:0 0 0 3px rgba(214,56,47,.35)}
+.tour-som{
+  position:absolute;left:50%;bottom:20px;transform:translateX(-50%);z-index:2;
+  display:inline-flex;align-items:center;gap:9px;border:0;cursor:pointer;white-space:nowrap;
+  background:#fff;color:var(--azul-esc);font-family:'Baloo 2',cursive;font-weight:700;font-size:1rem;
+  padding:11px 20px;border-radius:999px;box-shadow:0 14px 26px -12px rgba(0,0,0,.6);transition:background .18s ease,transform .18s ease
+}
+.tour-som:hover{background:var(--amarelo);transform:translateX(-50%) translateY(-2px)}
+.tour-som svg{width:20px;height:20px;flex:none}
+.tour-fim{
+  position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:12px;padding:30px 26px;text-align:center;color:#fff;
+  background:linear-gradient(180deg,rgba(11,58,105,.55),rgba(11,58,105,.94))
+}
+.tour-fim b{font-family:'Baloo 2',cursive;font-size:1.65rem;line-height:1.15}
+.tour-fim p{margin:0 0 6px;color:#d7e8f7;font-size:.98rem}
+.tour-rever{background:none;border:0;color:#fff;font-weight:600;text-decoration:underline;cursor:pointer;font-size:.92rem;padding:6px}
+.tour-fim[hidden],.tour-som[hidden]{display:none}
+
+/* ---------- Faixa de destaques ---------- */
+.faixa{background:var(--azul-esc);color:#fff}
+.faixa .env{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;padding:0}
+.faixa div{padding:26px 22px;border-left:1px solid rgba(255,255,255,.14)}
+.faixa div:first-child{border-left:0}
+.faixa b{display:block;font-family:'Baloo 2',cursive;font-size:1.28rem;color:var(--amarelo)}
+.faixa span{font-size:.93rem;color:#cfe3f5}
+
+/* ---------- Cartões genéricos ---------- */
+.grade{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.cartao{
+  background:#fff;border:1px solid var(--borda);border-radius:var(--raio);padding:26px;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;height:100%
+}
+.cartao:hover{transform:translateY(-4px);box-shadow:var(--sombra);border-color:var(--azul-claro)}
+.cartao h3{font-size:1.17rem;color:var(--azul-esc);margin-bottom:8px}
+.cartao p{margin:0;font-size:.97rem;color:var(--tinta-suave)}
+.icone{
+  width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;background:var(--azul-nevoa);color:var(--azul);flex:none
+}
+.icone svg{width:24px;height:24px}
+.icone--amarelo{background:var(--amarelo-suave);color:#A97706}
+.icone--vermelho{background:#FBE6E4;color:var(--vermelho)}
+
+/* ---------- Quem somos ---------- */
+.quem{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,4vw,60px);align-items:start}
+.linha-tempo{position:relative;padding-left:34px;margin-top:26px}
+.linha-tempo::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:3px;border-radius:3px;background:linear-gradient(var(--azul),var(--amarelo),var(--vermelho))}
+.linha-tempo li{position:relative;padding-bottom:24px}
+.linha-tempo li:last-child{padding-bottom:0}
+.linha-tempo li::before{content:"";position:absolute;left:-31px;top:7px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--azul)}
+.linha-tempo li:nth-child(2)::before{border-color:var(--amarelo)}
+.linha-tempo li:nth-child(3)::before{border-color:var(--vermelho)}
+.linha-tempo b{display:block;font-family:'Baloo 2',cursive;color:var(--azul-esc);font-size:1.08rem}
+.linha-tempo span{color:var(--tinta-suave);font-size:.97rem}
+
+.pilar{background:#fff;border:1px solid var(--borda);border-radius:16px;padding:20px 22px;border-left:5px solid var(--azul)}
+.pilar:nth-child(2){border-left-color:var(--amarelo)}
+.pilar:nth-child(3){border-left-color:var(--vermelho)}
+.pilar:nth-child(4){border-left-color:var(--azul-claro)}
+.pilar h4{font-size:1.02rem;color:var(--azul-esc);margin-bottom:5px}
+.pilar p{margin:0;font-size:.94rem;color:var(--tinta-suave)}
+.pilar ul{font-size:.94rem;color:var(--tinta-suave)}
+.pilar li{padding-left:16px;position:relative}
+.pilar li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--amarelo)}
+
+/* ---------- Direção (foto) ---------- */
+.direcao{display:grid;grid-template-columns:300px 1fr;gap:34px;align-items:center;background:#fff;border:1px solid var(--borda);border-radius:24px;padding:clamp(22px,3vw,34px);box-shadow:var(--sombra)}
+.retrato{margin:0;position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 40px -26px rgba(11,58,105,.85);background:var(--azul-nevoa)}
+.retrato::after{content:"";position:absolute;inset:0;border-radius:20px;border:5px solid transparent;
+  background:linear-gradient(150deg,var(--azul),var(--amarelo) 58%,var(--vermelho)) border-box;
+  -webkit-mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.retrato img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;display:block}
+.retrato figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:44px 20px 18px;color:#fff;
+  background:linear-gradient(transparent,rgba(11,58,105,.9) 62%);text-align:left
+}
+.retrato figcaption b{font-family:'Baloo 2',cursive;font-size:1.35rem;display:block;line-height:1.1}
+.retrato figcaption span{font-size:.86rem;color:var(--amarelo);font-weight:600;letter-spacing:.04em}
+.retrato svg{width:34px;height:34px;opacity:.75}
+.aspas{font-family:'Baloo 2',cursive;font-size:clamp(1.2rem,2.2vw,1.6rem);color:var(--azul-esc);line-height:1.4}
+
+/* ---------- Trilha (elemento assinatura) ---------- */
+.trilha{position:relative;margin-top:14px}
+.trilha ol{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative;z-index:2}
+.trilha::before{
+  content:"";position:absolute;left:8%;right:8%;top:52px;height:4px;border-radius:4px;z-index:1;
+  background:repeating-linear-gradient(90deg,var(--azul-claro) 0 14px,transparent 14px 26px)
+}
+.parada{text-align:center;background:transparent}
+.bolha{
+  width:104px;height:104px;border-radius:50%;margin:0 auto 16px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;background:#fff;border:5px solid var(--azul);
+  color:var(--azul-esc);font-family:'Baloo 2',cursive;font-weight:800;line-height:1.05;
+  box-shadow:0 14px 26px -18px rgba(11,58,105,.9)
+}
+.bolha small{display:block;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--tinta-suave);font-family:'Figtree',sans-serif}
+.parada:nth-child(2) .bolha{border-color:var(--amarelo)}
+.parada:nth-child(3) .bolha{border-color:var(--vermelho)}
+.parada:nth-child(4) .bolha{border-color:var(--azul-esc)}
+.parada h3{font-size:1.1rem;color:var(--azul-esc)}
+.parada p{font-size:.93rem;color:var(--tinta-suave);margin:4px 0 0}
+
+/* ---------- Segmentos ---------- */
+.segmento{background:#fff;border:1px solid var(--borda);border-radius:24px;overflow:hidden;box-shadow:var(--sombra);display:flex;flex-direction:column}
+.segmento header{padding:26px 30px;color:#fff;background:var(--azul)}
+.segmento:nth-child(2) header{background:var(--vermelho)}
+.segmento header h3{font-size:1.5rem}
+.segmento header span{font-size:.9rem;opacity:.92}
+.segmento .corpo{padding:28px 30px 32px}
+.segmento p{font-size:.99rem;color:var(--tinta-suave)}
+.lista-check li{position:relative;padding:5px 0 5px 28px;font-size:.96rem;color:var(--tinta-suave)}
+.lista-check li::before{
+  content:"";position:absolute;left:0;top:12px;width:16px;height:16px;border-radius:50%;
+  background:var(--amarelo-suave);border:2px solid var(--amarelo)
+}
+.rotulos{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.rotulo{background:var(--azul-nevoa);color:var(--azul-esc);border:1px solid var(--borda);border-radius:999px;padding:6px 14px;font-size:.85rem;font-weight:600}
+
+/* ---------- Bilíngue ---------- */
+.bilingue{background:linear-gradient(135deg,var(--azul-esc),var(--azul));color:#fff;position:relative;overflow:hidden}
+.bilingue::after{content:"";position:absolute;left:-90px;bottom:-120px;width:380px;height:380px;border-radius:50%;background:rgba(246,183,35,.16)}
+.bilingue .env{position:relative;z-index:2;display:grid;grid-template-columns:1fr .9fr;gap:clamp(28px,4vw,56px);align-items:center}
+.bilingue h2{color:#fff}
+.bilingue p{color:#d7e8f7}
+.recurso{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:6px}
+.recurso div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:15px 17px;font-size:.93rem;font-weight:600}
+.recurso b{display:block;color:var(--amarelo);font-family:'Baloo 2',cursive;font-size:1.02rem}
+
+/* ---------- Projetos ---------- */
+.projeto{background:#fff;border:1px solid var(--borda);border-radius:18px;padding:24px;position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+.projeto:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
+.projeto::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--azul)}
+.projeto:nth-child(3n+2)::before{background:var(--amarelo)}
+.projeto:nth-child(3n+3)::before{background:var(--vermelho)}
+.projeto h3{font-size:1.08rem;color:var(--azul-esc);margin:6px 0 8px}
+.projeto p{font-size:.94rem;color:var(--tinta-suave);margin:0}
+.projeto .tag{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--vermelho)}
+
+/* ---------- Eventos / agenda ---------- */
+.agenda{display:grid;gap:14px;margin-bottom:clamp(40px,4.5vw,58px)}
+.evento{
+  display:grid;grid-template-columns:92px 1fr;gap:20px;align-items:center;
+  background:#fff;border:1px solid var(--borda);border-radius:18px;padding:16px 22px;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease
+}
+.evento:hover{transform:translateX(5px);box-shadow:var(--sombra);border-color:var(--azul-claro)}
+.data{
+  background:var(--azul);color:#fff;border-radius:14px;text-align:center;padding:11px 6px;
+  font-family:'Baloo 2',cursive;line-height:1.05
+}
+.data b{display:block;font-size:1.95rem}
+.data span{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--amarelo)}
+.evento:nth-child(3n+2) .data{background:var(--vermelho)}
+.evento:nth-child(3n) .data{background:var(--azul-esc)}
+.evento h3{font-size:1.1rem;color:var(--azul-esc);margin:0 0 3px}
+.evento p{margin:0;font-size:.94rem;color:var(--tinta-suave)}
+.evento .tag{display:block;margin-bottom:2px}
+.album-tit{
+  display:flex;align-items:center;gap:14px;margin-bottom:22px;
+  font-family:'Baloo 2',cursive;font-size:clamp(1.3rem,2.4vw,1.7rem);color:var(--azul-esc)
+}
+.album-tit::after{content:"";flex:1;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--amarelo),transparent)}
+.registro{
+  display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(20px,2.6vw,34px);align-items:center;
+  background:#fff;border:1px solid var(--borda);border-radius:22px;padding:clamp(20px,2.4vw,30px);
+  box-shadow:var(--sombra)
+}
+.registro+.registro{margin-top:16px}
+.registro h4{font-family:'Baloo 2',cursive;font-size:clamp(1.25rem,2.2vw,1.6rem);color:var(--azul-esc);margin:0 0 8px}
+.registro p{margin:0;color:var(--tinta-suave);font-size:.97rem}
+.registro-fotos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.registro-fotos figure{
+  margin:0;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--borda);
+  background:var(--azul-nevoa)
+}
+.registro-fotos img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .5s ease}
+.registro-fotos--lado{grid-template-columns:1fr 1fr}
+.registro-fotos--lado img{aspect-ratio:4/3}
+.registro-fotos--larga{grid-template-columns:1fr}
+.registro-fotos--larga img{aspect-ratio:4/3}
+.registro-fotos--retrato{grid-template-columns:1fr;justify-items:center}
+.registro-fotos--retrato figure{max-width:60%}
+.registro-fotos--mista{grid-template-columns:.85fr 1.15fr;align-items:center}
+.registro-fotos--mista figure:last-child img{aspect-ratio:4/3}
+.registro-fotos--quatro figure:nth-child(n+3) img{aspect-ratio:4/3}
+.registro-fotos figure:hover img{transform:scale(1.05)}
+.registro-fotos .vaga{aspect-ratio:3/4;border-radius:16px;font-size:.82rem;padding:12px;gap:6px}
+.registro-fotos .vaga svg{width:24px;height:24px}
+
+/* ---------- Aulas ---------- */
+.aula{background:#fff;border:1px solid var(--borda);border-radius:18px;padding:22px;height:100%}
+.aula h3{font-size:1.05rem;color:var(--azul-esc);margin-bottom:6px}
+.aula p{font-size:.93rem;color:var(--tinta-suave);margin:0}
+.aula .idade{display:inline-block;background:var(--amarelo-suave);color:#8a5f04;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:10px}
+.extra{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.extra span,.extra button{
+  background:#fff;border:2px solid var(--azul-claro);color:var(--azul-esc);font-family:'Baloo 2',cursive;
+  font-weight:700;padding:10px 22px;border-radius:999px;font-size:1rem
+}
+.extra button{display:inline-flex;align-items:center;gap:9px;cursor:pointer;transition:background .18s ease,color .18s ease,transform .18s ease}
+.extra button:hover{background:var(--azul-nevoa);transform:translateY(-2px)}
+.extra button[aria-expanded="true"]{background:var(--azul);border-color:var(--azul);color:#fff}
+.extra button svg{width:13px;height:13px;transition:transform .25s ease}
+.extra button[aria-expanded="true"] svg{transform:rotate(180deg)}
+.extra-dica{margin:14px 0 0;color:var(--tinta-suave);font-size:.95rem}
+.extra-paineis{margin-top:18px}
+.extra-painel[hidden]{display:none}
+.registro--simples{grid-template-columns:1fr}
+.registro--simples .btn{margin-top:14px}
+.extra span:nth-child(even){border-color:var(--amarelo)}
+.extra span:nth-child(3n){border-color:var(--vermelho)}
+
+/* ---------- Galeria ---------- */
+.galeria{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.galeria figure{
+  margin:0;position:relative;border-radius:18px;overflow:hidden;background:var(--azul-nevoa);
+  box-shadow:0 18px 38px -26px rgba(11,58,105,.8);border:1px solid var(--borda)
+}
+.galeria img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.galeria figure:hover img{transform:scale(1.04)}
+.galeria figure:not(.alta) img{aspect-ratio:4/3}
+.alta{grid-row:span 2}
+.galeria figure.larga{grid-column:1/-1}
+.galeria figure.larga img{aspect-ratio:16/9;object-position:50% 38%}
+.alta img{aspect-ratio:auto;min-height:100%}
+.galeria figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:38px 18px 15px;color:#fff;font-weight:600;font-size:.95rem;
+  background:linear-gradient(transparent,rgba(11,58,105,.88) 65%);pointer-events:none
+}
+.vaga{
+  aspect-ratio:4/3;border-radius:18px;border:2px dashed var(--azul-claro);background:var(--azul-nevoa);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--azul);
+  font-weight:600;font-size:.92rem;text-align:center;padding:16px
+}
+.vaga svg{width:28px;height:28px;opacity:.7}
+
+/* ---------- Contato ---------- */
+.contato{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,52px);align-items:start}
+.info li{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--borda)}
+.info li:last-child{border-bottom:0}
+.info b{display:block;font-family:'Baloo 2',cursive;color:var(--azul-esc);font-size:1.03rem}
+.info span,.info a{color:var(--tinta-suave);font-size:.97rem}
+.info a:hover{color:var(--vermelho)}
+.caixa-cta{background:linear-gradient(135deg,var(--amarelo),#F9CD5E);border-radius:24px;padding:clamp(26px,3.4vw,38px);color:var(--azul-esc);box-shadow:var(--sombra)}
+.caixa-cta h3{font-size:clamp(1.4rem,2.6vw,1.9rem);margin-bottom:10px}
+.caixa-cta p{color:#5c4a12;font-size:1rem}
+.caixa-cta .btn{width:100%;margin-top:6px}
+.caixa-cta .btn+.btn{margin-top:10px}
+
+/* ---------- Rodapé ---------- */
+.rodape{background:var(--azul-esc);color:#c6dcf0;padding:56px 0 0;font-size:.95rem}
+.rodape .env{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:34px;padding-bottom:36px}
+.rodape h4{color:#fff;font-size:1.05rem;margin-bottom:14px}
+.rodape a{color:#c6dcf0}
+.rodape a:hover{color:var(--amarelo)}
+.rodape li{padding:5px 0}
+.chip-logo{background:#fff;border-radius:18px;padding:14px 18px;display:inline-block;margin-bottom:16px}
+.chip-logo img{width:150px}
+.sociais{display:flex;gap:10px;margin-top:14px}
+.sociais a{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:background .2s ease}
+.sociais a:hover{background:var(--vermelho)}
+.sociais svg{width:20px;height:20px;fill:#fff}
+.creditos{border-top:1px solid rgba(255,255,255,.14);padding:18px 0;font-size:.85rem;color:#9dbdd8}
+.creditos .env{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;padding-bottom:0;grid-template-columns:none}
+
+/* ---------- Botão flutuante WhatsApp ---------- */
+.flutua{
+  position:fixed;right:18px;bottom:18px;z-index:90;background:#25D366;color:#fff;width:58px;height:58px;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -12px rgba(0,0,0,.5);
+  transition:transform .2s ease
+}
+.flutua:hover{transform:scale(1.07)}
+.flutua svg{width:30px;height:30px;fill:#fff}
+
+/* ---------- Revelação ---------- */
+.js .revela{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.js .revela.vis{opacity:1;transform:none}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:980px){
+  .hero .env,.quem,.bilingue .env,.contato{grid-template-columns:1fr}
+  .tour-moldura{width:min(84%,318px)}
+  .cartao-marca{order:-1;max-width:440px}
+  .g3,.g4,.trilha ol{grid-template-columns:repeat(2,1fr)}
+  .faixa .env{grid-template-columns:repeat(2,1fr)}
+  .faixa div:nth-child(3){border-left:0}
+  .trilha::before{display:none}
+  .direcao{grid-template-columns:1fr}
+  .retrato{max-width:280px}
+  .rodape .env{grid-template-columns:1fr 1fr}
+  .nav a{padding:8px 9px;font-size:.88rem}
+}
+@media (max-width:760px){
+  .nav{
+    position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--borda);
+    flex-direction:column;align-items:stretch;padding:10px 20px 18px;gap:2px;display:none;
+    box-shadow:0 20px 30px -24px rgba(11,58,105,.7)
+  }
+  .nav.aberto{display:flex}
+  .nav a{padding:12px 10px}
+  .menu-btn{display:flex}
+  .topo .btn--zap{display:none}
+  .barra-topo{font-size:.8rem}
+  .barra-topo .env{justify-content:center;text-align:center}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  .g2,.g3,.g4,.galeria,.trilha ol,.recurso{grid-template-columns:1fr}
+  .galeria figure.larga img{aspect-ratio:4/3}
+  .registro{grid-template-columns:1fr}
+  .registro-fotos--retrato figure{max-width:100%}
+  .evento{grid-template-columns:74px 1fr;gap:15px;padding:14px 16px}
+  .data b{font-size:1.6rem}
+  .alta{grid-row:auto}
+  .alta img{aspect-ratio:3/4;min-height:0}
+  .faixa .env{grid-template-columns:1fr}
+  .faixa div{border-left:0;border-top:1px solid rgba(255,255,255,.14);padding:20px}
+  .faixa div:first-child{border-top:0}
+  .rodape .env{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .js .revela{opacity:1;transform:none}
+}
+</style>
+<script>document.documentElement.className+=" js"</script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- ===================== BARRA SUPERIOR ===================== -->
+<div class="barra-topo">
+  <div class="env">
+    <ul>
+      <li><a href="https://maps.google.com/?q=R.+Samuel+das+Neves,+130+-+Pechincha,+Rio+de+Janeiro+-+RJ,+22770-110" target="_blank" rel="noopener">R. Samuel das Neves, 130 — Pechincha, Rio de Janeiro</a></li>
+      <li><a href="tel:+5521999443763">(21) 99944-3763</a></li>
+    </ul>
+    <ul>
+      <li>Aberto de 06:45 às 19:00</li>
+      <li><a href="mailto:secretaria@crecheescolasantabeatriz.com.br">secretaria@crecheescolasantabeatriz.com.br</a></li>
+    </ul>
+  </div>
+</div>
+<div class="tri"><span></span><span></span><span></span></div>
+
+<!-- ===================== CABEÇALHO ===================== -->
+<header class="topo" id="topo">
+  <div class="env">
+    <a class="marca" href="#inicio">
+      <img src="fotos/logo.png" alt="Creche Escola Santa Beatriz">
+      <span>
+        <b>Creche Escola Santa Beatriz</b>
+        <small>Berçário ao 5º ano</small>
+      </span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu principal">
+      <a href="#escola">A escola</a>
+      <a href="#proposta">Proposta</a>
+      <a href="#segmentos">Segmentos</a>
+      <a href="#bilingue">Bilíngue</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#aulas">Aulas</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn--zap" href="https://wa.me/5521999443763?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20na%20Creche%20Escola%20Santa%20Beatriz." target="_blank" rel="noopener">Agendar visita</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="inicio">
+  <div class="env">
+    <div>
+      <span class="olho">Desde 2008 na Pechincha</span>
+      <h1>Um lugar onde a criança é <em>protagonista</em> do próprio aprendizado.</h1>
+      <p class="lead">Do berçário, a partir de 4 meses, até o 5º ano do Ensino Fundamental I. Uma escola que acolhe, cuida e ensina com propósito — para famílias que querem mais do que conteúdo: querem formação integral.</p>
+      <div class="hero-acoes">
+        <a class="btn btn--zap" href="https://wa.me/5521999443763?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20na%20Creche%20Escola%20Santa%20Beatriz." target="_blank" rel="noopener">Agendar uma visita</a>
+        <a class="btn btn--linha" href="#proposta">Conhecer a proposta</a>
+      </div>
+      <div class="selos">
+        <span class="selo"><i></i>Berçário a partir de 4 meses</span>
+        <span class="selo"><i></i>Parcial, ampliado ou integral</span>
+        <span class="selo"><i></i>Aberto de 06:45 às 19:00</span>
+      </div>
+    </div>
+    <!-- TOUR EM VÍDEO: o arquivo fica em video/tour-escola.mp4 e a capa em video/capa-tour.jpg.
+         Para trocar o vídeo, substitua os dois arquivos mantendo os mesmos nomes. -->
+    <div class="tour" id="tour">
+      <div class="tour-moldura">
+        <video class="tour-video" id="tourVideo" muted playsinline loop preload="none"
+               poster="video/capa-tour.jpg" aria-label="Tour em vídeo pela Creche Escola Santa Beatriz">
+          <source src="video/tour-escola.mp4" type="video/mp4">
+        </video>
+        <span class="tour-selo"><i></i>Tour pela escola</span>
+        <button class="tour-som" id="tourSom" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+          Assistir com som
+        </button>
+        <div class="tour-fim" id="tourFim" hidden>
+          <b>Gostou do que viu?</b>
+          <p>Venha conhecer a escola pessoalmente. A visita é agendada direto com a secretaria.</p>
+          <a class="btn btn--zap" href="https://wa.me/5521999443763?text=Ol%C3%A1!%20Vi%20o%20v%C3%ADdeo%20da%20escola%20no%20site%20e%20gostaria%20de%20agendar%20uma%20visita." target="_blank" rel="noopener">Agendar visita</a>
+          <button class="tour-rever" id="tourRever" type="button">Assistir de novo</button>
+        </div>
+      </div>
+      <span class="fita">Fundada em 28 de setembro de 2008</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAIXA ===================== -->
+<section class="faixa" aria-label="Destaques da escola">
+  <div class="env">
+    <div><b>4 meses</b><span>Idade mínima para o Berçário I</span></div>
+    <div><b>5º ano</b><span>Fundamental I completo</span></div>
+    <div><b>06:45–19:00</b><span>Aberto todos os dias letivos</span></div>
+    <div><b>Nutri + Psi</b><span>Nutricionista e psicóloga na equipe</span></div>
+  </div>
+</section>
+
+<!-- ===================== QUEM SOMOS ===================== -->
+<section class="secao" id="escola">
+  <div class="env quem revela">
+    <div>
+      <span class="olho">Quem somos</span>
+      <h2 class="titulo">Uma escola construída para ser referência em excelência educacional.</h2>
+      <p class="subtitulo">A Creche Escola Santa Beatriz foi fundada com a missão de formar cidadãos conscientes e críticos, que respeitem os valores morais, a ética e o meio ambiente — e que contribuam para um mundo melhor.</p>
+      <ul class="linha-tempo">
+        <li>
+          <b>2008 — O começo</b>
+          <span>A escola nasce em 28 de setembro, com a missão de tornar-se referência na qualidade de ensino e na formação de cidadãos conscientes e críticos.</span>
+        </li>
+        <li>
+          <b>2012 — Nova gestão</b>
+          <span>Uma nova equipe de gestoras assume a direção, com a proposta de modernizar as instalações e investir em novas propostas pedagógicas.</span>
+        </li>
+        <li>
+          <b>Hoje — Formação integral</b>
+          <span>Do Berçário ao 5º ano, nos períodos parcial, ampliado ou integral, consolidando-se como referencial de excelência na formação integral da criança.</span>
+        </li>
+      </ul>
+    </div>
+    <div class="grade" style="gap:14px">
+      <div class="pilar">
+        <h4>Nossa visão</h4>
+        <p>Ser referencial de excelência em educação.</p>
+      </div>
+      <div class="pilar">
+        <h4>Nossa missão</h4>
+        <p>Construir junto às nossas crianças, famílias e equipe um ambiente rico em experiências, proporcionando uma aprendizagem significativa, humana e com propósito.</p>
+      </div>
+      <div class="pilar">
+        <h4>Nossos valores</h4>
+        <ul>
+          <li>Valorizar quem faz a nossa escola</li>
+          <li>Respeitar</li>
+          <li>Cuidar</li>
+          <li>Fazer acontecer</li>
+          <li>Crescer juntos</li>
+        </ul>
+      </div>
+      <div class="pilar">
+        <h4>Nosso propósito</h4>
+        <p>Orgulho de pertencimento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DIREÇÃO ===================== -->
+<section class="secao secao--nevoa">
+  <div class="env revela">
+    <div class="direcao">
+      <figure class="retrato">
+        <img src="fotos/direcao-regina.jpg" alt="Regina, diretora e proprietária da Creche Escola Santa Beatriz">
+        <figcaption><b>Regina</b><span>Diretora e proprietária</span></figcaption>
+      </figure>
+      <div>
+        <span class="olho">Palavra da direção</span>
+        <p class="aspas">“Acreditamos que a Creche Escola Santa Beatriz é um espaço onde podemos estabelecer laços afetivos, através dos quais se constroem valores éticos e morais.”</p>
+        <p style="color:var(--tinta-suave);margin-top:14px">À frente da escola, Regina conduz uma equipe que acredita que cada criança é um ser único, dotado de habilidades e valorizado em seu contexto de vida. Sua potencialidade é respeitada no próprio ritmo de aprendizagem — e é assim que a escola valoriza a criatividade, a autonomia e os interesses individuais de cada aluno.</p>
+        <a class="btn btn--linha" href="https://wa.me/5521999443763?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20dire%C3%A7%C3%A3o%20da%20Creche%20Escola%20Santa%20Beatriz." target="_blank" rel="noopener" style="margin-top:8px">Falar com a direção</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROPOSTA PEDAGÓGICA ===================== -->
+<section class="secao" id="proposta">
+  <div class="env">
+    <div class="cabecalho-secao revela">
+      <span class="olho">Proposta pedagógica</span>
+      <h2 class="titulo">Uma visão humana da criança e do mundo.</h2>
+      <p class="subtitulo">Nosso Projeto Político Pedagógico segue as determinações da LDBEN nº 9.394/96 e das Diretrizes Curriculares Nacionais para a Educação Básica, a Educação Infantil e o Ensino Fundamental. A integração dos conhecimentos, em processo permanente de interdisciplinaridade e contextualização, contribui para uma aprendizagem significativa — na vivência e com propósito.</p>
+    </div>
+    <div class="grade g4 revela">
+      <article class="cartao">
+        <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 0 0 0 18M3 12h18"/></svg></div>
+        <h3>Contextualizado</h3>
+        <p>Privilegia que o centro do processo educacional seja a criança e a sua realidade.</p>
+      </article>
+      <article class="cartao">
+        <div class="icone icone--amarelo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h7v12H4zM13 6h7v12h-7z"/><path d="M11 12h2"/></svg></div>
+        <h3>Interdisciplinar</h3>
+        <p>Articula as contribuições dos diversos campos de conhecimento em um só percurso.</p>
+      </article>
+      <article class="cartao">
+        <div class="icone icone--vermelho"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <h3>Interativo</h3>
+        <p>Valoriza a contribuição das vivências diárias na construção do conhecimento.</p>
+      </article>
+      <article class="cartao">
+        <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></div>
+        <h3>Diferenciado</h3>
+        <p>Faz uso de práticas de inclusão mobilizadas pelo reconhecimento da diferença — física, cognitiva, cultural e econômica.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRILHA / SEGMENTOS ===================== -->
+<section class="secao secao--nevoa" id="segmentos">
+  <div class="env">
+    <div class="cabecalho-secao revela">
+      <span class="olho">O caminho na Santa Beatriz</span>
+      <h2 class="titulo">Do primeiro colo ao 5º ano, sem trocar de escola.</h2>
+      <p class="subtitulo">Encontre em qual etapa o seu filho entra hoje — e veja até onde ele pode crescer com a gente.</p>
+    </div>
+
+    <div class="trilha revela">
+      <ol>
+        <li class="parada">
+          <div class="bolha">4 meses<small>a 1 ano</small></div>
+          <h3>Berçário I e II</h3>
+          <p>Acolhimento, rotina e vínculo. A vivência do inglês começa já no Berçário II.</p>
+        </li>
+        <li class="parada">
+          <div class="bolha">2 e 3<small>anos</small></div>
+          <h3>Maternal I e II</h3>
+          <p>Brincar como forma de aprender. Robótica a partir do Maternal I e o projeto A Criança Autora no Maternal II.</p>
+        </li>
+        <li class="parada">
+          <div class="bolha">4 e 5<small>anos</small></div>
+          <h3>Pré I e II</h3>
+          <p>Autonomia, linguagem e educação financeira entram na rotina a partir do Pré I.</p>
+        </li>
+        <li class="parada">
+          <div class="bolha">1º ao 5º<small>ano</small></div>
+          <h3>Fundamental I</h3>
+          <p>Grade completa alinhada à BNCC, com projetos temáticos e aulas de campo ao longo do ano.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="grade g2 revela" style="margin-top:clamp(40px,5vw,66px)">
+      <article class="segmento">
+        <header>
+          <h3>Educação Infantil</h3>
+          <span>Berçário I ao Pré II</span>
+        </header>
+        <div class="corpo">
+          <p>Aprender brincando, dar asas à imaginação, integrar escola, família e sociedade e auxiliar as crianças a se tornarem pessoas seguras, que constroem relações sociais saudáveis. O conhecimento é construído na interação com o outro e com o meio, visando ao desenvolvimento integral: físico, afetivo-emocional, cognitivo e sociocultural.</p>
+          <p>A brincadeira é constante e obrigatória — é brincando que a criança integra a matemática, a linguagem, o movimento, a arte, a socialização, o ritmo, a natureza e a sociedade, a identidade e a autonomia. Sem materiais engessados: a criança é a protagonista.</p>
+          <ul class="lista-check">
+            <li>Rotina com musicalização, psicomotricidade, literatura, artes plásticas e dramatização</li>
+            <li>Cozinha experimental, inglês, educação emocional e educação ambiental</li>
+            <li>Robótica a partir do Maternal I e educação financeira a partir do Pré I</li>
+            <li>Portfólio digital bimestral com todo o aprendizado registrado</li>
+            <li>Aulas de campo e passeios temáticos que conectam a criança ao bairro e à cidade</li>
+          </ul>
+          <div class="rotulos">
+            <span class="rotulo">Parcial</span><span class="rotulo">Ampliado</span><span class="rotulo">Integral</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="segmento">
+        <header>
+          <h3>Ensino Fundamental I</h3>
+          <span>1º ao 5º ano</span>
+        </header>
+        <div class="corpo">
+          <p>Além da excelência na qualidade de ensino, a proposta contempla a formação do indivíduo em sua totalidade, na vivência dos valores éticos e na busca por aprendizagens significativas e com propósito. O foco está na construção de valores e atitudes que permeiam as relações interpessoais.</p>
+          <p>O material didático segue as diretrizes da BNCC e é desenvolvido conforme as especificidades de cada disciplina — inclusive preparado para o ensino híbrido, caso se faça necessário.</p>
+          <ul class="lista-check">
+            <li>Língua Portuguesa, Redação, Matemática, História, Geografia e Ciências</li>
+            <li>Inglês, Música, Educação Física e Educação Artística</li>
+            <li>Educação Ambiental, Financeira e Socioemocional</li>
+            <li>Robótica educacional com orientadoras capacitadas</li>
+            <li>Projetos temáticos e aulas de campo ao longo de todo o ano letivo</li>
+          </ul>
+          <div class="rotulos">
+            <span class="rotulo">Parcial</span><span class="rotulo">Ampliado</span><span class="rotulo">Integral</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BILÍNGUE ===================== -->
+<section class="secao bilingue" id="bilingue">
+  <div class="env revela">
+    <div>
+      <span class="olho olho--claro">Projeto bilíngue</span>
+      <h2 class="titulo">Inglês que não é mais uma disciplina — é parte do dia.</h2>
+      <p>A imersão na língua inglesa dentro do contexto da criança permite que ela aprenda de forma natural. Aqui, o inglês está interligado a todo o desenvolvimento global do aluno, fazendo conexões com todas as áreas — em uma experiência diária, lúdica, colaborativa e cheia de experimentação.</p>
+      <p>São materiais de ambientação, músicas, games, flash cards, materiais concretos, oficinas e projetos de leitura em inglês.</p>
+      <div class="hero-acoes" style="margin-bottom:0">
+        <a class="btn btn--amarelo" href="https://wa.me/5521999443763?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Projeto%20Bil%C3%ADngue." target="_blank" rel="noopener">Saber mais sobre o bilíngue</a>
+      </div>
+    </div>
+    <div class="recurso">
+      <div><b>1h por dia</b>No contraturno, para alunos do integral</div>
+      <div><b>Desde o Berçário II</b>Vivência da segunda língua desde cedo</div>
+      <div><b>Já incluso</b>Nas matrículas do integral, a partir de 8h</div>
+      <div><b>Aberto à comunidade</b>Extracurricular para alunos do parcial e não alunos</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJETOS ===================== -->
+<section class="secao" id="projetos">
+  <div class="env">
+    <div class="cabecalho-secao revela">
+      <span class="olho">Projetos pedagógicos</span>
+      <h2 class="titulo">Aprendizado que sai da sala e entra na vida.</h2>
+      <p class="subtitulo">Nossos projetos acontecem durante todo o ano letivo e envolvem crianças, famílias e equipe. Cada um deles nasce de uma pergunta simples: o que essa criança leva daqui para a vida?</p>
+    </div>
+    <div class="grade g3 revela">
+      <article class="projeto"><span class="tag">Leitura</span><h3>Projeto Leitura</h3><p>Desenvolve o prazer de ler desde o Berçário II, de forma lúdica e divertida. Semanalmente, o aluno escolhe um livro do acervo da turma, leva para casa e compartilha esse momento com a família.</p></article>
+      <article class="projeto"><span class="tag">Autoria</span><h3>A Criança Autora</h3><p>A partir do Maternal II, cada criança escreve, ilustra e publica o próprio livro. No processo criativo, desenvolve autoconfiança e curiosidade para encarar desafios.</p></article>
+      <article class="projeto"><span class="tag">Transdisciplinar</span><h3>Projeto Temático</h3><p>A cada semestre escolhemos um tema para trabalhar os conteúdos programáticos de forma prática, com aulas de campo e contação de história. Ao final, uma exposição aberta às famílias.</p></article>
+      <article class="projeto"><span class="tag">Solidariedade</span><h3>Projetos Solidários</h3><p>Páscoa, Olimpíadas e Natal viram janelas de oportunidade para ensinar solidariedade, com ações de acolhimento ao próximo e as crianças como protagonistas.</p></article>
+      <article class="projeto"><span class="tag">Alimentação</span><h3>Cozinha Experimental</h3><p>Nossa nutricionista promove práticas culinárias com as crianças do integral, e as professoras conduzem aulas interativas com receitas, degustação e discussão sobre a experiência.</p></article>
+      <article class="projeto"><span class="tag">Saúde</span><h3>Lanche Saudável</h3><p>Uma reflexão de toda a comunidade educativa sobre o que é ser saudável. Instituímos a “5ª feira Saudável”, dia em que os alunos trazem alimentos integrais e naturais.</p></article>
+      <article class="projeto"><span class="tag">Convivência</span><h3>Prevenção ao Bullying</h3><p>Atenção constante à violência escolar, com estratégias de prevenção, combate e conscientização que envolvem toda a comunidade escolar, inclusive as famílias.</p></article>
+      <article class="projeto"><span class="tag">Respeito</span><h3>Prevenção ao Racismo</h3><p>Estudos sobre a cultura afro-brasileira e africana e conscientização de que toda vida importa, integrados ao cotidiano da escola.</p></article>
+      <article class="projeto"><span class="tag">Sustentabilidade</span><h3>Troca-Troca Literário</h3><p>Evento anual de troca de livros entre alunos, que reforça a importância do reuso e o impacto que novas leituras geram no aprendizado acadêmico e social.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AULAS ===================== -->
+<section class="secao secao--nevoa" id="aulas">
+  <div class="env">
+    <div class="cabecalho-secao revela">
+      <span class="olho">Aulas complementares</span>
+      <h2 class="titulo">Já incluídas na rotina, sem custo extra.</h2>
+      <p class="subtitulo">Fazem parte da grade e acontecem dentro do horário de aula, conduzidas por profissionais preparados para cada faixa etária.</p>
+    </div>
+    <div class="grade g4 revela">
+      <article class="aula"><h3>Educação Física e Psicomotricidade</h3><p>A prática na infância impacta a vida inteira. As capacidades físicas, psicológicas e cognitivas são estimuladas de maneira gradual e prazerosa.</p></article>
+      <article class="aula"><span class="idade">a partir do Maternal I</span><h3>Robótica Educacional</h3><p>Aulas com orientadoras treinadas para a Educação Infantil e o Fundamental I, baseadas em quatro pilares: questionar, pensar, definir e executar.</p></article>
+      <article class="aula"><h3>Musicalização</h3><p>A linguagem musical como instrumento metodológico e pedagógico, que dinamiza todo o processo de ensino-aprendizagem pela interdisciplinaridade.</p></article>
+      <article class="aula"><h3>Inglês</h3><p>Jogos, música e histórias no desenvolvimento do potencial de cada criança. Além do vocabulário, aprendem-se estruturas de rotina que enriquecem a comunicação.</p></article>
+      <article class="aula"><h3>Educação Artística</h3><p>Estimula a criatividade e a expressão de sentimentos. Atividades artísticas diárias na Educação Infantil.</p></article>
+      <article class="aula"><h3>Educação Ambiental</h3><p>Uma hora/aula por semana dentro da grade curricular, envolvendo estudantes, famílias, escola e professores, da Educação Infantil ao Fundamental I.</p></article>
+      <article class="aula"><span class="idade">a partir do Pré I</span><h3>Educação Financeira</h3><p>Formar crianças mais conscientes, que aprendem a tomar decisões acertadas e a lidar com dinheiro de forma ética e responsável.</p></article>
+      <article class="aula"><h3>Educação Socioemocional</h3><p>Autoconhecimento, empatia, comunicação e decisões responsáveis por meio de atividades lúdicas e reflexivas.</p></article>
+    </div>
+
+    <div class="cabecalho-secao revela" style="margin-top:clamp(46px,5vw,70px);margin-bottom:0">
+      <span class="olho">Aulas extracurriculares</span>
+      <h2 class="titulo" style="font-size:clamp(1.5rem,3vw,2.1rem)">Para completar o dia do jeito que a criança gosta.</h2>
+      <div class="extra" id="extras">
+        <button type="button" class="extra-bt" aria-expanded="false" aria-controls="ex-bilingue">Projeto Bilíngue<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button" class="extra-bt" aria-expanded="true" aria-controls="ex-ballet">Ballet<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button" class="extra-bt" aria-expanded="false" aria-controls="ex-capoeira">Capoeira<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button type="button" class="extra-bt" aria-expanded="false" aria-controls="ex-futsal">Futsal<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      </div>
+      <p class="extra-dica">Toque em uma atividade para ver como ela acontece.</p>
+    </div>
+
+      <div class="extra-paineis">
+        <div class="extra-painel" id="ex-bilingue" hidden>
+          <article class="registro">
+            <div>
+              <span class="tag">Aula extracurricular</span>
+              <h4>Projeto Bilíngue</h4>
+              <p>Uma hora por dia, no contraturno, a partir do Berçário II. Já está incluído para quem fica no integral e funciona como extracurricular para quem estuda em período parcial — inclusive para crianças que não estudam na escola. Nas turmas menores, o inglês entra pela brincadeira e pelas datas do calendário, como no Saint Patrick&#39;s Day das fotos.</p>
+              <a class="btn btn--linha" href="#bilingue" style="margin-top:14px">Ver como funciona o bilíngue</a>
+            </div>
+            <div class="registro-fotos registro-fotos--mista">
+              <figure><img src="fotos/bilingue-1.jpg" alt="Bebês da Creche Escola Santa Beatriz brincando diante dos cartazes em inglês feitos pela turma no Projeto Bilíngue" loading="lazy"></figure>
+              <figure><img src="fotos/bilingue-2.jpg" alt="Turma do Berçário da Creche Escola Santa Beatriz sentada em roda com a professora numa atividade do Projeto Bilíngue" loading="lazy"></figure>
+            </div>
+          </article>
+        </div>
+        <div class="extra-painel" id="ex-ballet">
+          <article class="registro">
+            <div>
+          <span class="tag">Aula extracurricular</span>
+          <h4>Ballet</h4>
+          <p>O ballet é uma das aulas extracurriculares da escola. As aulas trabalham postura, ritmo e consciência do corpo — nessa idade, boa parte delas acontece no chão e em grupo, de sapatilha e uniforme, sem cobrança de perfeição.</p>
+        </div>
+        <div class="registro-fotos registro-fotos--larga">
+          <figure><img src="fotos/ballet-1.jpg" alt="Alunas da Creche Escola Santa Beatriz sentadas durante a aula de ballet, de uniforme rosa e sapatilha" loading="lazy"></figure>
+          <figure><img src="fotos/ballet-2.jpg" alt="Turma de ballet da Creche Escola Santa Beatriz posando em grupo no fim da aula, em frente ao painel colorido" loading="lazy"></figure>
+        </div>
+          </article>
+        </div>
+        <div class="extra-painel" id="ex-capoeira" hidden>
+          <article class="registro">
+            <div>
+          <span class="tag">Aula extracurricular</span>
+          <h4>Capoeira</h4>
+          <p>A capoeira é uma das aulas extracurriculares da escola. A turma treina com música ao vivo — berimbau, atabaque e pandeiro — e joga na roda com o mestre, no ritmo e no tamanho de cada idade.</p>
+        </div>
+        <div class="registro-fotos">
+          <figure><img src="fotos/capoeira-1.jpg" alt="Crianças da Creche Escola Santa Beatriz na roda de capoeira, com os músicos ao fundo tocando berimbau e atabaque" loading="lazy"></figure>
+          <figure><img src="fotos/capoeira-2.jpg" alt="Aluna da Creche Escola Santa Beatriz com a professora de capoeira, ao lado dos músicos que tocam na roda" loading="lazy"></figure>
+        </div>
+          </article>
+        </div>
+        <div class="extra-painel" id="ex-futsal" hidden>
+          <article class="registro">
+            <div>
+              <span class="tag">Aula extracurricular</span>
+              <h4>Futsal</h4>
+              <p>O futsal é uma das aulas extracurriculares da escola e acontece na quadra coberta. As turmas treinam com bola em grupo, com uniforme e regras adaptadas ao tamanho de cada criança.</p>
+            </div>
+            <div class="registro-fotos registro-fotos--mista">
+              <figure><img src="fotos/futsal-1.jpg" alt="Time de futsal da Creche Escola Santa Beatriz posando com a bola no centro da quadra" loading="lazy"></figure>
+              <figure><img src="fotos/futsal-2.jpg" alt="Crianças correndo atrás da bola durante a aula de futsal na quadra coberta da Creche Escola Santa Beatriz" loading="lazy"></figure>
+            </div>
+          </article>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- ===================== CUIDADO / ESTRUTURA ===================== -->
+<section class="secao" id="estrutura">
+  <div class="env">
+    <div class="cabecalho-secao revela">
+      <span class="olho">Cuidado no dia a dia</span>
+      <h2 class="titulo">Enquanto você trabalha, a rotina dele está bem cuidada.</h2>
+      <p class="subtitulo">Da alimentação ao acompanhamento emocional, cada detalhe do dia é pensado por quem entende de criança.</p>
+    </div>
+    <div class="grade g3 revela">
+      <article class="cartao">
+        <div class="icone icone--amarelo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v9a3 3 0 0 0 6 0V3M9 12v9M18 3c-1.5 2-2 4-2 6v4h4"/><path d="M20 13v8"/></svg></div>
+        <h3>Nutricionista na equipe</h3>
+        <p>Os cardápios são montados por nutricionista, e a alimentação vira aprendizado nas práticas da cozinha experimental.</p>
+      </article>
+      <article class="cartao">
+        <div class="icone icone--vermelho"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 22l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+        <h3>Psicóloga na equipe</h3>
+        <p>Acompanhamento do desenvolvimento emocional das crianças, em diálogo permanente com professores e famílias.</p>
+      </article>
+      <article class="cartao">
+        <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <h3>Aberto de 06:45 às 19:00</h3>
+        <p>Períodos parcial, ampliado e integral, para a rotina caber de verdade na agenda da sua família.</p>
+      </article>
+      <article class="cartao">
+        <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M7 9l2.5 2.5L7 14M13 14h4"/></svg></div>
+        <h3>Portfólio digital</h3>
+        <p>Na Educação Infantil, a cada bimestre, as famílias acompanham o registro completo do que foi vivido e aprendido pela criança.</p>
+      </article>
+      <article class="cartao">
+        <div class="icone icone--amarelo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg></div>
+        <h3>Aulas de campo</h3>
+        <p>Cruzar os muros da escola faz parte do aprendizado: passeios temáticos e excursões que conectam a criança ao bairro e à cidade.</p>
+      </article>
+      <article class="cartao">
+        <div class="icone icone--vermelho"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 1.5z"/><path d="M9 8h7M9 12h7"/></svg></div>
+        <h3>Material alinhado à BNCC</h3>
+        <p>Propostas pedagógicas atuais, desenvolvidas conforme as especificidades de cada disciplina e prontas para o ensino híbrido.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EVENTOS =====================
+     PARA ATUALIZAR A AGENDA: copie um bloco <article class="evento">,
+     troque o dia (<b>), o mês (<span>), o título e a descrição.
+     Para tirar um evento que já passou, apague o <article> inteiro.
+     PARA UM NOVO ÁLBUM: copie o bloco <article class="registro revela"> inteiro,
+     troque o mês, o título, a descrição e as duas fotos de dentro de
+     <div class="registro-fotos">. Formatos (classe extra no mesmo div):
+       (nenhuma) = 2 fotos em pé lado a lado
+       registro-fotos--larga   = fotos deitadas, uma embaixo da outra
+       registro-fotos--lado    = duas fotos deitadas, lado a lado
+       registro-fotos--mista   = 1 em pé (primeiro) + 1 deitada (segundo)
+       registro-fotos--retrato = 1 foto em pé sozinha, centralizada
+       registro-fotos--quatro  = 2 em pé (primeiro) + 2 deitadas (depois)
+================================================================= -->
+<section class="secao secao--sol" id="eventos">
+  <div class="env">
+    <div class="cabecalho-secao revela">
+      <span class="olho">Eventos e datas</span>
+      <h2 class="titulo">O que está acontecendo na escola.</h2>
+      <p class="subtitulo">Nossos eventos fazem parte do projeto pedagógico: são momentos em que a criança mostra o que aprendeu e a família participa junto. Confira as próximas datas e acompanhe os registros do que já aconteceu.</p>
+    </div>
+
+    <div class="agenda revela">
+      <article class="evento">
+        <div class="data"><b>28</b><span>Set</span></div>
+        <div>
+          <span class="tag">Aniversário</span>
+          <h3>18 anos da Santa Beatriz</h3>
+          <p>A escola completa 18 anos de história na Pechincha, com uma semana de atividades comemorativas com as turmas.</p>
+        </div>
+      </article>
+      <article class="evento">
+        <div class="data"><b>12</b><span>Out</span></div>
+        <div>
+          <span class="tag">Semana da criança</span>
+          <h3>Semana da Criança</h3>
+          <p>Uma semana inteira de brincadeiras, oficinas e surpresas preparadas pela equipe para todas as turmas, do Berçário ao Fundamental I.</p>
+        </div>
+      </article>
+      <article class="evento">
+        <div class="data"><b>20</b><span>Nov</span></div>
+        <div>
+          <span class="tag">Projeto Prevenção ao Racismo</span>
+          <h3>Dia da Consciência Negra</h3>
+          <p>Rodas de conversa, contação de histórias e produções das crianças sobre respeito, identidade e diversidade.</p>
+        </div>
+      </article>
+      <article class="evento">
+        <div class="data"><b>Dez</b><span>a definir</span></div>
+        <div>
+          <span class="tag">Encerramento</span>
+          <h3>Mostra de projetos e formatura</h3>
+          <p>Fechamento do ano letivo com a apresentação dos trabalhos das turmas e a formatura do 5º ano do Fundamental I.</p>
+        </div>
+      </article>
+    </div>
+
+    <div>
+      <h3 class="album-tit revela">Registros dos nossos eventos</h3>
+      <article class="registro revela">
+        <div>
+          <span class="tag">Janeiro</span>
+          <h4>Colônia de Férias</h4>
+          <p>Nas férias a escola abre a colônia: os dias viram oficina, com ateliê de artes, atividades de culinária e brincadeira de água no Espaço Verão. A rotina fica mais leve, mas continua sendo rotina — com horário, equipe e cuidado de sempre.</p>
+        </div>
+        <div class="registro-fotos registro-fotos--retrato">
+          <figure><img src="fotos/colonia-ferias.jpg" alt="Crianças da Creche Escola Santa Beatriz pintando pizzas de papelão no ateliê da colônia de férias" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">Fevereiro</span>
+          <h4>Carnaval</h4>
+          <p>O Carnaval abre o calendário de festas da escola. Sombrinhas de frevo no teto, confete no chão e cada criança com a fantasia que escolheu. As turmas brincam no pátio decorado e param no painel para a foto que a família guarda.</p>
+        </div>
+        <div class="registro-fotos registro-fotos--mista">
+          <figure><img src="fotos/carnaval-1.jpg" alt="Aluno fantasiado de super-herói no Carnaval da Creche Escola Santa Beatriz, sob as sombrinhas de frevo" loading="lazy"></figure>
+          <figure><img src="fotos/carnaval-2.jpg" alt="Alunas fantasiadas posando no painel de Carnaval da Creche Escola Santa Beatriz" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">17 de março</span>
+          <h4>Saint Patrick's Day</h4>
+          <p>Comemorado em 17 de março, o Saint Patrick's Day é a festa nacional da Irlanda, em homenagem ao padroeiro do país — daí o verde, o trevo e o pote de ouro no fim do arco-íris. A data entra pelo Projeto Bilíngue: as turmas conhecem os símbolos e o vocabulário em inglês, e o Berçário participa com atividades sensoriais.</p>
+        </div>
+        <div class="registro-fotos registro-fotos--mista">
+          <figure><img src="fotos/saint-patrick-1.jpg" alt="Aluno da Creche Escola Santa Beatriz espiando pelo painel de chapéu de trevo no Saint Patrick&#39;s Day" loading="lazy"></figure>
+          <figure><img src="fotos/saint-patrick-2.jpg" alt="Turma do Berçário brincando com balões verdes em atividade do Saint Patrick&#39;s Day, com os arco-íris de papel feitos pelas crianças ao fundo" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">Março ou abril</span>
+          <h4>Páscoa</h4>
+          <p>Na Páscoa a escola trabalha a data com roda de história, decoração feita pelas crianças e atividades separadas por faixa de idade. No Berçário a proposta é sensorial: o coelho vira personagem da história e a cenoura vira lanche, cortada em tiras e servida no ritmo de quem está aprendendo a comer sozinho.</p>
+        </div>
+        <div class="registro-fotos">
+          <figure><img src="fotos/pascoa-1.jpg" alt="Turma do Berçário da Creche Escola Santa Beatriz em roda de história de Páscoa com a professora, o coelho de pelúcia e o painel de orelhas na parede" loading="lazy"></figure>
+          <figure><img src="fotos/pascoa-2.jpg" alt="Bebê da Creche Escola Santa Beatriz comendo tiras de cenoura na atividade de Páscoa" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">Maio</span>
+          <h4>Dia das Mães</h4>
+          <p>No Dia das Mães as turmas se apresentam na quadra, do Berçário em diante, e cada criança entrega à mãe a lembrança preparada na escola. Na edição <i>Mãe, meu porto seguro</i>, até os bebês tiveram a sua parte na apresentação — com a plateia de mães filmando tudo de perto.</p>
+        </div>
+        <div class="registro-fotos registro-fotos--mista">
+          <figure><img src="fotos/dia-das-maes-1.jpg" alt="Mãe com o filho no colo na comemoração do Dia das Mães da Creche Escola Santa Beatriz" loading="lazy"></figure>
+          <figure><img src="fotos/dia-das-maes-2.jpg" alt="Turmas do Berçário na apresentação do Dia das Mães, na quadra da escola, em frente ao painel Mãe, meu porto seguro" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">Junho</span>
+          <h4>Festa Junina</h4>
+          <p>Todo mês de junho a escola vira arraiá. As turmas ensaiam as danças ao longo das semanas e se apresentam para as famílias, com decoração feita pelas crianças, comidas típicas e brincadeiras no pátio. É a festa mais esperada do ano letivo.</p>
+        </div>
+        <div class="registro-fotos">
+          <figure><img src="fotos/festa-junina-1.jpg" alt="Crianças da Creche Escola Santa Beatriz apresentando a dança da Festa Junina, vestidas com roupas típicas" loading="lazy"></figure>
+          <figure><img src="fotos/festa-junina-2.jpg" alt="Duas alunas da Creche Escola Santa Beatriz sorrindo no pula-pula durante a Festa Junina, com trajes típicos" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">26 de julho</span>
+          <h4>Dia dos Avós</h4>
+          <p>No Dia dos Avós a escola abre as portas para quem tem história para contar. A edição <i>Avós pelo mundo</i> mostrou às turmas como diferentes países celebram a data e terminou em piquenique no pátio, com avós e netos lado a lado.</p>
+        </div>
+        <div class="registro-fotos">
+          <figure><img src="fotos/dia-dos-avos-1.jpg" alt="Avós e neto sentados no piquenique do Dia dos Avós, no pátio da Creche Escola Santa Beatriz" loading="lazy"></figure>
+          <figure><img src="fotos/dia-dos-avos-2.jpg" alt="Avós com a neta no colo em frente ao painel Avós pelo mundo, da Creche Escola Santa Beatriz" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">Agosto</span>
+          <h4>Dia dos Pais</h4>
+          <p>No Dia dos Pais o convite é para o pai entrar na escola e brincar. Na edição <i>Papai, você é meu guia</i>, as turmas prepararam homenagem, lembrança e um avental personalizado para cada pai — e a manhã terminou com pais e filhos juntos na quadra.</p>
+        </div>
+        <div class="registro-fotos registro-fotos--lado">
+          <figure><img src="fotos/dia-dos-pais-1.jpg" alt="Pais e filhos reunidos na quadra da Creche Escola Santa Beatriz na comemoração do Dia dos Pais, com aventais personalizados" loading="lazy"></figure>
+          <figure><img src="fotos/dia-dos-pais-2.jpg" alt="Turma da Creche Escola Santa Beatriz enfileirada com corações de papel em frente ao painel Papai, você é meu guia" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">Agosto</span>
+          <h4>Olimpíadas CESB</h4>
+          <p>Uma vez por ano a quadra vira arena olímpica. As turmas disputam provas adaptadas para cada idade — corrida com a bolinha na colher, circuito de obstáculos, revezamento — trabalhando coordenação motora, espírito de equipe e a alegria de participar. No fim, cada criança leva a sua medalha.</p>
+        </div>
+        <div class="registro-fotos">
+          <figure><img src="fotos/olimpiadas-1.jpg" alt="Aluno da Creche Escola Santa Beatriz mostrando a medalha das Olimpíadas CESB 2026" loading="lazy"></figure>
+          <figure><img src="fotos/olimpiadas-2.jpg" alt="Aluna da Creche Escola Santa Beatriz na prova da bolinha na colher, em frente ao painel das Olimpíadas CESB" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">Setembro</span>
+          <h4>Treinamento de Primeiros Socorros</h4>
+          <p>A equipe da escola — professores e funcionários — passou por treinamento prático de primeiros socorros, com bonecos de simulação de adulto, criança e bebê. O foco foi o que mais preocupa nessa idade: engasgo e reanimação cardiopulmonar. A capacitação é exigida pela Lei Lucas (Lei nº 13.722/2018) para escolas e creches de todo o país.</p>
+        </div>
+        <div class="registro-fotos registro-fotos--mista">
+          <figure><img src="fotos/primeiros-socorros-1.jpg" alt="Bonecos de simulação de adulto, criança e bebê usados no treinamento de primeiros socorros da equipe da Creche Escola Santa Beatriz" loading="lazy"></figure>
+          <figure><img src="fotos/primeiros-socorros-2.jpg" alt="Professores e funcionários da Creche Escola Santa Beatriz praticando em duplas a manobra de desengasgo na quadra da escola" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">12 de outubro</span>
+          <h4>Dia das Crianças</h4>
+          <p>A escola comemora o Dia das Crianças com programação especial: as turmas vêm fantasiadas, personagens visitam o pátio, tem balões, pintura e brincadeiras a manhã inteira. É o dia em que a criança escolhe o roteiro.</p>
+        </div>
+        <div class="registro-fotos">
+          <figure><img src="fotos/dia-das-criancas-1.jpg" alt="Aluna da Creche Escola Santa Beatriz fantasiada de princesa no Dia das Crianças, em frente ao painel decorado" loading="lazy"></figure>
+          <figure><img src="fotos/dia-das-criancas-2.jpg" alt="Alunos fantasiados brincando com balões ao lado de um personagem no pátio da escola, no Dia das Crianças" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">Outubro</span>
+          <h4>Halloween</h4>
+          <p>Em outubro a escola se transforma: as turmas vêm fantasiadas, os espaços ganham decoração temática e as atividades brincam com luz, textura e som. Até o Berçário participa, com estímulos sensoriais pensados para a idade e sempre no colo de quem cuida.</p>
+        </div>
+        <div class="registro-fotos registro-fotos--mista">
+          <figure><img src="fotos/halloween-1.jpg" alt="Aluno da Creche Escola Santa Beatriz rindo ao lado da bruxa na sala decorada de Halloween" loading="lazy"></figure>
+          <figure><img src="fotos/halloween-2.jpg" alt="Bebês do Berçário da Creche Escola Santa Beatriz em atividade sensorial na decoração de Halloween, acompanhados pela professora" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">Novembro</span>
+          <h4>Tarde de Autógrafos</h4>
+          <p>Aqui a criança não só lê. Ela escreve. Cada aluno cria o seu próprio livro contando a sua história de vida, e o livro é impresso de verdade, com capa e tudo. Na Tarde de Autógrafos a família leva a criança até a livraria, e lá ela senta à mesa, com a plaquinha do seu nome, e autografa o exemplar para quem veio prestigiar — como autora de verdade.</p>
+        </div>
+        <div class="registro-fotos registro-fotos--mista">
+          <figure><img src="fotos/autografos-1.jpg" alt="Banners da Tarde de Autógrafos da Creche Escola Santa Beatriz montados na livraria" loading="lazy"></figure>
+          <figure><img src="fotos/autografos-2.jpg" alt="Aluno da Creche Escola Santa Beatriz autografando o seu livro na Tarde de Autógrafos" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">Dezembro</span>
+          <h4>Natal Solidário</h4>
+          <p>O Natal Solidário é a ação de fim de ano do Projeto Solidários: a escola vira ponto de coleta e as famílias doam presentes, que chegam às mãos de crianças atendidas por um projeto social parceiro. As crianças participam da arrecadação e entendem para onde vai o que ajudaram a juntar.</p>
+        </div>
+        <div class="registro-fotos">
+          <figure><img src="fotos/natal-solidario-1.jpg" alt="Responsável pelo projeto social parceiro com os presentes do Natal Solidário, ao lado do banner do projeto" loading="lazy"></figure>
+          <figure><img src="fotos/natal-solidario-2.jpg" alt="Presentes arrecadados no Natal Solidário da Creche Escola Santa Beatriz, com as responsáveis pela ação" loading="lazy"></figure>
+        </div>
+      </article>
+      <article class="registro revela">
+        <div>
+          <span class="tag">Dezembro</span>
+          <h4>Festa da Família</h4>
+          <p>A Festa da Família tira a escola de dentro da escola: pais, irmãos e avós se encontram com as turmas num espaço aberto, com programação para as crianças e a visita do Papai Noel. É o encontro em que as famílias da Santa Beatriz se conhecem entre si.</p>
+        </div>
+        <div class="registro-fotos">
+          <figure><img src="fotos/festa-da-familia-1.jpg" alt="Família de aluna da Creche Escola Santa Beatriz com o Papai Noel durante a Festa da Família, ao ar livre" loading="lazy"></figure>
+          <figure><img src="fotos/festa-da-familia-2.jpg" alt="Aluno da Creche Escola Santa Beatriz ao lado de um personagem na Festa da Família" loading="lazy"></figure>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALERIA =====================
+     PARA ACRESCENTAR FOTOS: copie um dos <figure> abaixo e troque
+     o src pela nova imagem, ajustando a <figcaption>.
+     A classe "alta" deixa a foto em pé, ocupando duas linhas.
+     A classe "larga" deixa a foto deitada, ocupando a largura toda.
+================================================================= -->
+<section class="secao secao--nevoa" id="galeria">
+  <div class="env">
+    <div class="cabecalho-secao revela">
+      <span class="olho">Nossa escola por dentro</span>
+      <h2 class="titulo">Venha ver de perto — e traga seu filho junto.</h2>
+      <p class="subtitulo">A melhor forma de conhecer a Santa Beatriz é passando um tempo com a gente. Agende uma visita e conheça os espaços, a equipe e a rotina.</p>
+    </div>
+    <div class="galeria revela">
+      <figure class="larga"><img src="fotos/fachada.jpg" alt="Fachada da Creche Escola Santa Beatriz na Rua Samuel das Neves, com os banners das atividades no muro" loading="lazy"><figcaption>Nossa fachada — R. Samuel das Neves, 130, Pechincha</figcaption></figure>
+      <figure class="alta"><img src="fotos/entrada.jpg" alt="Entrada da Creche Escola Santa Beatriz, com missão, visão, propósito e valores nas portas" loading="lazy"><figcaption>A entrada, com nossos valores nas portas</figcaption></figure>
+      <figure><img src="fotos/patio.jpg" alt="Pátio da escola com playground, quadra e área verde" loading="lazy"><figcaption>Pátio, playground e quadra</figcaption></figure>
+      <figure><img src="fotos/area-recreacao.jpg" alt="Área de recreação ao ar livre, com mesinhas, brinquedos e sombra de árvore" loading="lazy"><figcaption>Área de recreação ao ar livre</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTATO ===================== -->
+<section class="secao" id="contato">
+  <div class="env contato">
+    <div class="revela">
+      <span class="olho">Matrículas abertas</span>
+      <h2 class="titulo">Fale com a nossa secretaria.</h2>
+      <p class="subtitulo">Tire suas dúvidas sobre vagas, períodos e valores, ou marque um horário para conhecer a escola com calma.</p>
+      <ul class="info">
+        <li>
+          <div class="icone" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></div>
+          <div><b>Endereço</b><a href="https://maps.google.com/?q=R.+Samuel+das+Neves,+130+-+Pechincha,+Rio+de+Janeiro+-+RJ,+22770-110" target="_blank" rel="noopener">R. Samuel das Neves, 130 — Pechincha<br>Rio de Janeiro/RJ, 22770-110</a></div>
+        </li>
+        <li>
+          <div class="icone icone--vermelho" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div><b>Telefone e WhatsApp</b><a href="tel:+5521999443763">(21) 99944-3763</a></div>
+        </li>
+        <li>
+          <div class="icone icone--amarelo" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+          <div><b>E-mail</b><a href="mailto:secretaria@crecheescolasantabeatriz.com.br">secretaria@crecheescolasantabeatriz.com.br</a></div>
+        </li>
+        <li>
+          <div class="icone" style="margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+          <div><b>Horário de funcionamento</b><span>Segunda a sexta, das 06:45 às 19:00</span></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="caixa-cta revela">
+      <h3>Agende uma visita</h3>
+      <p>Converse com a nossa equipe pelo WhatsApp e escolha o melhor dia para conhecer a escola. Respondemos dentro do horário de funcionamento.</p>
+      <a class="btn btn--zap" href="https://wa.me/5521999443763?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20na%20Creche%20Escola%20Santa%20Beatriz." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <a class="btn btn--claro" href="mailto:secretaria@crecheescolasantabeatriz.com.br?subject=Interesse%20em%20matr%C3%ADcula%20-%20Creche%20Escola%20Santa%20Beatriz">Enviar e-mail para a secretaria</a>
+      <a class="btn btn--claro" href="tel:+5521999443763">Ligar agora</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== RODAPÉ ===================== -->
+<footer class="rodape">
+  <div class="env">
+    <div>
+      <span class="chip-logo"><img src="fotos/logo.png" alt="Creche Escola Santa Beatriz"></span>
+      <p>Formando cidadãos conscientes e críticos desde 2008, na Pechincha, Rio de Janeiro.</p>
+      <div class="sociais">
+        <a href="https://www.instagram.com/santabeatrizcrecheescola" target="_blank" rel="noopener" aria-label="Instagram da escola">
+          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/crecheescolasantabeatriz" target="_blank" rel="noopener" aria-label="Facebook da escola">
+          <svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.3H7.7V13h2.7v8z"/></svg>
+        </a>
+        <a href="https://wa.me/5521999443763" target="_blank" rel="noopener" aria-label="WhatsApp da escola">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.2 1.3-1.9 1.4-.5.1-1.2.2-3.5-.7-2.9-1.2-4.8-4.2-5-4.4-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 2 .9 2.1c.1.2.1.3 0 .5-.3.5-.6.8-.8 1-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.2.1.4.1.5-.1.2-.2.6-.7.8-1 .2-.3.3-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.6-.1 1.2z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4>A escola</h4>
+      <ul>
+        <li><a href="#escola">Quem somos</a></li>
+        <li><a href="#proposta">Proposta pedagógica</a></li>
+        <li><a href="#segmentos">Segmentos e turmas</a></li>
+        <li><a href="#estrutura">Cuidado no dia a dia</a></li>
+        <li><a href="#eventos">Eventos e datas</a></li>
+        <li><a href="#galeria">Nossa escola por dentro</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <ul>
+        <li>R. Samuel das Neves, 130<br>Pechincha — Rio de Janeiro/RJ<br>CEP 22770-110</li>
+        <li><a href="tel:+5521999443763">(21) 99944-3763</a></li>
+        <li><a href="mailto:secretaria@crecheescolasantabeatriz.com.br">secretaria@crecheescolasantabeatriz.com.br</a></li>
+        <li>06:45 às 19:00</li>
+      </ul>
+    </div>
+  </div>
+  <div class="creditos">
+    <div class="env">
+      <span>© <span id="ano">2026</span> Creche Escola Santa Beatriz. Todos os direitos reservados.</span>
+      <span>Orgulho de pertencimento.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="flutua" href="https://wa.me/5521999443763?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADcula." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.2 1.3-1.9 1.4-.5.1-1.2.2-3.5-.7-2.9-1.2-4.8-4.2-5-4.4-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 2 .9 2.1c.1.2.1.3 0 .5-.3.5-.6.8-.8 1-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.2.1.4.1.5-.1.2-.2.6-.7.8-1 .2-.3.3-.2.6-.1.2.1 1.5.7 1.8.8.3.1.4.2.5.3.1.2.1.6-.1 1.2z"/></svg>
+</a>
+
+<script>
+// Ano no rodapé
+document.getElementById('ano').textContent = new Date().getFullYear();
+
+// Sombra no cabeçalho ao rolar
+var topo = document.getElementById('topo');
+window.addEventListener('scroll', function(){
+  topo.classList.toggle('rolou', window.scrollY > 8);
+}, {passive:true});
+
+// Menu no celular
+var btn = document.getElementById('menuBtn');
+var nav = document.getElementById('nav');
+btn.addEventListener('click', function(){
+  var aberto = nav.classList.toggle('aberto');
+  btn.setAttribute('aria-expanded', aberto);
+  btn.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+});
+nav.addEventListener('click', function(e){
+  if(e.target.tagName === 'A'){
+    nav.classList.remove('aberto');
+    btn.setAttribute('aria-expanded', false);
+  }
+});
+
+// Revelação suave ao rolar
+var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var alvos = document.querySelectorAll('.revela');
+if(reduz || !('IntersectionObserver' in window)){
+  alvos.forEach(function(el){ el.classList.add('vis'); });
+} else {
+  var obs = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('vis'); obs.unobserve(en.target); }
+    });
+  }, {threshold:0, rootMargin:'0px 0px -40px 0px'});
+  alvos.forEach(function(el){ obs.observe(el); });
+}
+
+// Aulas extracurriculares: abre uma de cada vez
+(function(){
+  var botoes = document.querySelectorAll('#extras .extra-bt');
+  if(!botoes.length) return;
+  botoes.forEach(function(bt){
+    bt.addEventListener('click', function(){
+      var aberto = bt.getAttribute('aria-expanded') === 'true';
+      botoes.forEach(function(outro){
+        outro.setAttribute('aria-expanded','false');
+        document.getElementById(outro.getAttribute('aria-controls')).hidden = true;
+      });
+      if(!aberto){
+        bt.setAttribute('aria-expanded','true');
+        document.getElementById(bt.getAttribute('aria-controls')).hidden = false;
+      }
+    });
+  });
+})();
+
+// Tour em vídeo: toca sem som quando aparece na tela; com som só se a pessoa pedir
+(function(){
+  var v = document.getElementById('tourVideo');
+  if(!v) return;
+  var som = document.getElementById('tourSom'), fim = document.getElementById('tourFim'), rever = document.getElementById('tourRever');
+  var comSom = false;
+  function tocar(){ var p = v.play(); if(p && p.catch){ p.catch(function(){}); } }
+  if(!reduz && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting){ v.pause(); return; }
+        if(!comSom){ tocar(); }
+      });
+    }, {threshold:.4}).observe(v);
+  }
+  som.addEventListener('click', function(){
+    comSom = true; fim.hidden = true; som.hidden = true;
+    v.loop = false; v.muted = false; v.controls = true; v.currentTime = 0; tocar();
+  });
+  v.addEventListener('ended', function(){ if(comSom){ v.controls = false; fim.hidden = false; } });
+  rever.addEventListener('click', function(){ fim.hidden = true; v.controls = true; v.currentTime = 0; tocar(); });
+})();
+</script>
+</body>
+</html>
